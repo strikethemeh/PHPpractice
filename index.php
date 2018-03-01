@@ -1,6 +1,83 @@
 <?php
+/* GET VARIABLES SECTION
 
-/* WHILE LOOPS SECTION */
+/* print_r($_GET);
+
+/* - Here we have put questions in the URL like this:
+http://localhost/1-WebDevClass/?name=kelli&password=1234&gender=female
+
+and then when we print it, we get:
+
+Array ( [name] => kelli [password] => 1234 [gender] => female )
+
+on our page. However, if we have the URL blank like this:
+http://localhost/1-WebDevClass/
+
+It comes like up like this:
+Array()
+
+
+echo "<br><br>";
+
+echo "Hi there, ".$_GET["name"]."!";
+
+ Here we take the value of "name", which in this case is whatever is typed into our input named "name" and echo it with the text above. */
+
+/* CHALLENGE:
+user enters into any number, PHP processes number and tells us whether or not the number is prime */
+
+print_r($_GET);
+
+$inputnumber = $_GET["number"];
+
+for($divider=0; $divider<$inputnumber; $divider++){
+    if($inputnumber%$divider=0){
+        echo "This is a prime number";
+    }else{
+        echo "This is not a prime number";
+    }
+}
+/* The above is my attempt to solve the challenge. It doesn't work, so I will need to go through the challenge with the video when I have more time. Basically what I've done in the above is to print the array to make sure it is registering the "number" input. It is. Then I tried to create a loop that runs while the $divider, which will start as 0 and increase by one each loop, is less than the $inputnumber (whatever is typed into the "number" input). Then inside of that I've create an if statement, that says if the $inputnumber divided by the $divider has a remainder of 0, it should echo "This is a prime number" and the opposite if it does not that a remainder of 0. I'm confusing myself. */
+
+?>
+
+<!-- HTML BELOW -->
+
+<h1>Is It A Prime Number?</h1>
+
+<p>Type in a number to check if it is a prime number.</p>
+
+<form>
+    <input name="number" type="text">
+    <input type="submit" value="Check This Number">
+</form>
+
+
+<!--
+<h1>What's your name?</h1>
+<form>
+    <input name="name" type="text">
+    <input type="submit" value="Go!">
+</form>
+-->
+
+<!-- When we type into our form called "name" that we created above and click the submit button, the URL changes from:
+http://localhost/1-WebDevClass/
+
+to 
+
+http://localhost/1-WebDevClass/?name=Kelli
+
+which is how we connect where the URL from the first example comes from (http://localhost/1-WebDevClass/?name=kelli&password=1234&gender=female). 
+
+We can see the connection of the name of the input, in this case "name" becomes in the URL what we have set it to in the input box, so since I typed "Kelli" and pressed submit, we got the URL ?name=Kelli
+
+
+
+
+ NOTES FROM PHP SECTIONS BELOW:
+
+/* WHILE LOOPS SECTION
 
 $i = 0;
 
@@ -11,7 +88,7 @@ while ($i < 10){
     
 }
 
-/* - Here is a basic while loop. It states that while a variable $i is less than 10, we will echo $i. It then increases $i by one for each iteration, which is a very important element of the loop because otherwise it will go on infinitely and I think will produce a variable. */
+ - Here is a basic while loop. It states that while a variable $i is less than 10, we will echo $i. It then increases $i by one for each iteration, which is a very important element of the loop because otherwise it will go on infinitely and I think will produce a variable. 
 
 echo "<br><br>";
 
@@ -23,7 +100,7 @@ while ($five <= 50){
     $five = $five + 5;
 }
 
-/* - Here is a challenge to produce the first 10 numbers in the 5 times table. We create a variable $five that is set to 5 and set up a loop that says while $five is less than or equal to 50 (which is the tenth number in the five times table), we will echo $five and then increase $five by 5. */
+ - Here is a challenge to produce the first 10 numbers in the 5 times table. We create a variable $five that is set to 5 and set up a loop that says while $five is less than or equal to 50 (which is the tenth number in the five times table), we will echo $five and then increase $five by 5. 
 
 echo "<br><br>";
 
@@ -38,7 +115,7 @@ while($counter < sizeof($whileArray)){
     
 }
 
-/* - Here is a challenge to create an array and then use a while loop to display each of the values in the array. So we create an array called $whileArray and a counting variable $counter to control how many times the loop iterates. Then we say that while $counter is less than the size of $whileArray (which will be 2, since it has "One" = 0, "Two" = 1 and "Three = 2), we are to echo $whileArray[whatever number the counter is on] (so in the case of $counter = 0, it would be $whileArray[0] which is "One") and then we add one to the counter on each iteration. */
+ - Here is a challenge to create an array and then use a while loop to display each of the values in the array. So we create an array called $whileArray and a counting variable $counter to control how many times the loop iterates. Then we say that while $counter is less than the size of $whileArray (which will be 2, since it has "One" = 0, "Two" = 1 and "Three = 2), we are to echo $whileArray[whatever number the counter is on] (so in the case of $counter = 0, it would be $whileArray[0] which is "One") and then we add one to the counter on each iteration. 
 
 
 
@@ -232,9 +309,11 @@ echo $$variableName;
 
     here we call a variable within a variable. first we call variableName, which is "name", but in our echo statement we ask for $ + the value of variable name, which equals $name, and since we have a variable $name above in our code that equals "Kelli<br>", that is what gets printed. */
 
+-->
 
 
-?>
+
+
 
 
 
